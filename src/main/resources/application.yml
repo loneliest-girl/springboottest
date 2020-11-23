@@ -1,0 +1,32 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/my?serverTimezone=UTC
+    username: root
+    password: zhu343000
+server:
+  port: 9091
+  servlet:
+    context-path: /aaa
+
+swagger:
+  print-init: true
+  enabled: true
+  security-configuration:
+    client-id: client-1
+    client-secret: secretA
+    scope-separator: \,
+    use-basic-authentication-with-access-code-grant: true
+  dockets:
+    docket-api:
+      base-package: cn.yufeng.transport.controller
+      group-name: api
+      api-info:
+        title: 要展示的接口名称
+        description: RESTful接口描述
+        version: 版本号
+        license: 版权
+      global-parameters:
+        name: token
+        description: Access Token
+        param-type: header
